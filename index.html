@@ -1,0 +1,2531 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>САМОСТІЙНА РОБОТА №1</title>
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <style>
+        .button-link:link,
+        .button-link:visited {
+            background-color: #f44336;
+            color: white;
+            padding: 15px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button-link:hover,
+        .button-link:active {
+            background-color: red;
+        }
+
+        #custom-table {
+            font-family: Arial, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #custom-table td,
+        #custom-table th {
+            border: 1px solid #ddd;
+            text-align: left;
+            padding: 8px;
+        }
+
+        #custom-table tr:nth-child(even) {
+            background-color: #ddd;
+        }
+
+        #unique-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #unique-table,
+        #unique-table th,
+        #unique-table td {
+            border: 1px solid black;
+        }
+
+        .table-with-caption {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-with-caption,
+        .table-with-caption th,
+        .table-with-caption td {
+            border: 1px solid black;
+        }
+
+        .table-with-caption th,
+        .table-with-caption td {
+            padding: 5px;
+            text-align: left;
+        }
+
+        .rounded-table,
+        .rounded-table th,
+        .rounded-table td {
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 8px;
+        }
+
+        .rounded-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        table,
+        th,
+        td {
+            border: 1px solid black;
+        }
+
+        .dotted-table th,
+        .dotted-table td {
+            border-style: dotted;
+            border-width: 1px;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .dotted-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .table-fixed-first-column,
+        .table-fixed-first-column th,
+        .table-fixed-first-column td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .table-fixed-first-column th:first-child {
+            width: 70%;
+        }
+
+        .table-fixed-row-height,
+        .table-fixed-row-height th,
+        .table-fixed-row-height td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .table-fixed-row-height .second-row {
+            height: 200px;
+        }
+
+        .table-bordered-headers,
+        .table-bordered-headers th,
+        .table-bordered-headers td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .vertical-headers-table,
+        .vertical-headers-table th,
+        .vertical-headers-table td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .vertical-headers-table th {
+            background-color: #f2f2f2;
+            /* светло-серый фон для заголовков */
+            padding: 8px;
+            text-align: left;
+        }
+
+        .vertical-headers-table td {
+            padding: 8px;
+        }
+
+        .custom-padding-table,
+        .custom-padding-table th,
+        .custom-padding-table td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .custom-padding-table th,
+        .custom-padding-table td {
+            padding-top: 10px;
+            padding-bottom: 20px;
+            padding-left: 30px;
+            padding-right: 40px;
+        }
+
+        .custom-cellspacing-table,
+        .custom-cellspacing-table th,
+        .custom-cellspacing-table td {
+            border: 1px solid black;
+        }
+
+        .custom-cellspacing-table {
+            border-spacing: 30px;
+        }
+
+        .zebra-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .zebra-table th,
+        .zebra-table td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        .zebra-table tr:nth-child(even) {
+            background-color: #D6EEEE;
+        }
+
+        .table-striped {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .table-striped,
+        .table-striped th,
+        .table-striped td {
+            border: 1px solid black;
+        }
+
+        .table-striped th:nth-child(even),
+        .table-striped td:nth-child(even) {
+            background-color: #D6EEEE;
+        }
+
+        .striped-table,
+        .striped-table th,
+        .striped-table td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .striped-table tr:nth-child(even) {
+            background-color: rgba(150, 212, 212, 0.4);
+        }
+
+        .striped-table th:nth-child(even),
+        .striped-table td:nth-child(even) {
+            background-color: rgba(150, 212, 212, 0.4);
+        }
+
+        .hover-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .hover-table th,
+        .hover-table td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #DDD;
+        }
+
+        .hover-table tr:hover {
+            background-color: #D6EEEE;
+        }
+
+        .table-colgroup-highlight,
+        .table-colgroup-highlight th,
+        .table-colgroup-highlight td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .table-colgroup-highlight colgroup col {
+            background-color: #D6EEEE;
+        }
+
+        .multi-colgroup-table,
+        .multi-colgroup-table th,
+        .multi-colgroup-table td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .multi-colgroup-table colgroup col:nth-child(1) {
+            background-color: #D6EEEE;
+        }
+
+        .multi-colgroup-table colgroup col:nth-child(2) {
+            background-color: #D6EEEE;
+        }
+
+        .multi-colgroup-table colgroup col:nth-child(3),
+        .multi-colgroup-table colgroup col:nth-child(4),
+        .multi-colgroup-table colgroup col:nth-child(5) {
+            background-color: pink;
+        }
+
+        .empty-colgroup-table,
+        .empty-colgroup-table th,
+        .empty-colgroup-table td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .empty-colgroup-table colgroup col:nth-child(4),
+        .empty-colgroup-table colgroup col:nth-child(5) {
+            background-color: pink;
+        }
+
+        .collapsible-columns-table,
+        .collapsible-columns-table th,
+        .collapsible-columns-table td {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+
+        .collapsible-columns-table colgroup col:nth-child(3),
+        .collapsible-columns-table colgroup col:nth-child(4),
+        .collapsible-columns-table colgroup col:nth-child(5) {
+            visibility: collapse;
+        }
+
+        .horizontal-nav-menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .horizontal-nav-menu li {
+            float: left;
+        }
+
+        .horizontal-nav-menu li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 16px;
+            text-decoration: none;
+        }
+
+        .horizontal-nav-menu li a:hover {
+            background-color: #111;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>САМОСТІЙНА РОБОТА №1</h1>
+
+    <h2>1.1. Що таке HTML? </h2>
+    <h3>Мій перший заголовок</h3>
+    <p>Мій перший параграф.</p>
+
+
+    <h2>1.2. HTML Редактори коду та IDE</h2>
+    <h3>Це заголовок</h3>
+    <p>Це параграф.</p>
+
+
+    <h2>1.3. HTML Основні приклади. </h2>
+    <h1>Це заголовок 1</h1>
+    <h2>Це заголовок 2</h2>
+    <h3>Це заголовок 3</h3>
+    <h4>Це заголовок 4</h4>
+    <h5>Це заголовок 5</h5>
+    <h6>Це заголовок 6</h6>
+
+    <p><b>Примітка.</b> Розміри заголовків визначаються самими браузерами за замовчуванням. Але при необхідності можна
+        задати інші розміри заголовків за допомогою CSS.</p>
+    <a href="https://w3schoolsua.github.io/">Це посилання</a>
+
+    <h3>HTML Зображення</h3>
+    <p>HTML зображення визначаються за допомогою тега img:</p>
+    <img src="../images/w3schools.jpg" alt="W3Schools" width="104" height="142">
+
+    <h3>HTML Кнопки</h3>
+    <p>HTML кнопки визначаються за допомогою тега button:</p>
+    <button>Тицни мене!</button>
+
+    <h3>Невпорядкований список HTML</h3>
+
+    <ul>
+        <li>Кава</li>
+        <li>Чай</li>
+        <li>Молоко</li>
+    </ul>
+
+    <h3>Впорядкований список HTML</h3>
+
+    <ol>
+        <li>Кава</li>
+        <li>Чай</li>
+        <li>Молоко</li>
+    </ol>
+
+
+    <h2>1.4. HTML Елементи </h2>
+
+    <p>Це параграф.
+    <p>Це параграф.
+
+    <p>Це параграф<br> з обривом рядка.</p>
+
+    <h2>1.5. HTML Атрибути. </h2>
+
+    <h3>Атрибут href</h3>
+    <p>HTML-посилання визначаються за допомогою тегу. Адреса посилання вказана в атрибуті href:</p>
+
+    <a href="https://w3schoolsua.github.io/">Це посилання</a>
+
+    <h3>Атрибут src</h3>
+    <p>HTML-зображення визначаються за допомогою тега img, а ім'я файла джерела зображення вказується в атрибуті src:
+    </p>
+
+    <img src="../images/img_girl.jpg" width="500" height="600">
+
+
+    <h3>Атрибути розміру</h3>
+    <p>Зображення в HTML мають набір атрибутів розміру, який визначає ширину і висоту зображення:</p>
+
+    <img src="../images/img_girl.jpg" width="200" height="240">
+
+
+    <h3>Атрибут alt</h3>
+    <p>Атрибут alt повинен відображати вміст зображення, тому користувачі, які не можуть бачити зображення, отримують
+        уявлення про те, що містить зображення:</p>
+
+    <img src="../images/img_girl.jpg" alt="Дівчина в жакеті" width="200" height="240">
+
+    <h3>Атрибут style</h3>
+    <p>Атрибут style використовується для вказівки стилю елемента, такого як колір:</p>
+
+    <p style="color:red">Це параграф червоного кольору.</p>
+
+    <h2 title="Я заголовок">Атрибут title</h2>
+
+    <p title="Я виринаюча підказка">Наведіть курсор миші на цей параграф, щоб відобразити атрибут заголовка у вигляді
+        підказки.</p>
+
+
+    <h2>1.6. HTML Параграфи</h2>
+
+    <p>
+        цей абзац
+        містить багато рядків
+        у вихідному коді,
+        але браузер
+        ігнорує це.
+    </p>
+
+    <p>
+        цей абзац
+        містить багато прогалин
+        в вихідному коді,
+        але браузер
+        ігнорує це
+    </p>
+
+    <p>Кількість рядків в параграфі залежить від розміру вікна браузера. Якщо ви зміните розмір вікна браузера,
+        кількість рядків в цьому параграфі зміниться.</p>
+
+
+    <p>Це<br>параграф<br>з обривом рядка</p>
+
+
+    <p>Тег pre зберігає як пробіли, так і розриви рядків:</p>
+
+    <pre>
+І ось ідем у бою життєвому.
+
+Міцні, тверді, незламні мов граніт,
+
+Бо плач не дав свободи ще нікому,
+
+А хто борець, той здобуває світ.
+</pre>
+
+
+    <h2>1.7. HTML Посилання </h2>
+
+    <h1>HTML Посилання</h1>
+
+    <p><a href="https://w3schoolsua.github.io/">Відвідайте W3SchoolsUA!</a></p>
+
+
+    <h2>Абсолютний URL</h2>
+    <p><a href="https://www.w3.org/">W3C</a></p>
+    <p><a href="https://www.google.com/">Google</a></p>
+
+    <h2>Відносний URL</h2>
+    <p><a href="../html/html_images.html">HTML Зображення</a></p>
+    <p><a href="../css/index.html">CSS Підручник</a></p>
+
+    <h2>Атрибут target</h2>
+
+    <a href="https://www.w3schools.com/" target="_blank">Відвідати W3Schools!</a>
+
+    <p>Якщо target="_blank", посилання відкриється в новому вікні або вкладці браузера.</p>
+
+    <p>Розташування у фреймі? <a href="../html/index.html" target="_top">Тицни тут!</a></p>
+
+
+    <h2>Зображення як посилання</h2>
+
+    <p>На зображенні нижче є посилання. Спробуйте натиснути на нього.</p>
+
+    <a href="../html/index.html"><img src="../images/smiley.gif" alt="HTML підручник"
+            style="width:42px;height:42px;"></a>
+
+    <h2>Назви посилань (підказка)</h2>
+    <p>Атрибут title визначає додаткову інформацію про елемент. Інформація найчастіше відображається як текст підказки,
+        коли курсор миші переміщується над елементом.</p>
+    <a href="https://w3schoolsua.github.io/html/" title="Перейти в розділ HTML">Відвідати HTML Підручник</a>
+
+
+
+    <p><a href="#C4">Перейти до розділу 4</a></p>
+    <p><a href="#C10">Перейти до розділу 10</a></p>
+
+    <h2>Розділ 1</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2>Розділ 2</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2>Розділ 3</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2 id="C4">Розділ 4</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2>Розділ 5</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2>Розділ 6</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2>Розділ 7</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2>Розділ 8</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2>Розділ 9</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2 id="C10">Розділ 10</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2>Розділ 11</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2>Розділ 12</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2>Розділ 13</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2>Розділ 14</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2>Розділ 15</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2>Розділ 16</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2>Розділ 17</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2>Розділ 18</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2>Розділ 19</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+    <h2>Розділ 20</h2>
+    <p>Цей розділ пояснює ba bla bla</p>
+
+
+    <h2>Зовнішні шляхи</h2>
+
+    <p>У цьому прикладі використовується повна URL-адреса для посилання на веб-сторінку:</p>
+    <p><a href="https://w3schoolsua.github.io/html/index.html">HTML підручник</a></p>
+
+
+    <h2>Зовнішні шляхи</h2>
+
+    <p>Цей приклад посилається на сторінку, розташовану в папці html на поточному веб-сайті:</p>
+
+    <p><a href="../html/index.html">HTML підручник</a></p>
+
+
+    <h2>Зовнішні шляхи</h2>
+
+    <p>Цей приклад посилається на сторінку, розташовану в тій самій папці, що й поточна сторінка:</p>
+
+    <p><a href="index.html">HTML підручник</a></p>
+
+    <!-- 1.7.1.	HTML Посилання - Різні кольори.  -->
+    <h2>1.7.1. HTML Посилання - Різні кольори. </h2>
+
+    <h2>Кнопка посилання</h2>
+    <p>Посилання, оформлене у вигляді кнопки:</p>
+    <a href="../index.html" target="_blank" class="button-link">Це посилання</a>
+
+    <!-- 1.8. HTML Зображення  -->
+    <h2>1.8. HTML Зображення</h2>
+
+    <h2>Розмір зображення</h2>
+
+    <p>Тут ми використовуємо атрибут style для визначення ширини та висоти зображення:</p>
+
+    <img src="../images/img_girl.jpg" alt="Дівчина в жакеті" style="width:200px;height:240px;">
+
+
+    <h2>Розмір зображення</h2>
+
+    <p>Тут ми вказуємо ширину та висоту зображення за допомогою атрибутів width та height (ширина та висота):</p>
+
+    <img src="../images/img_girl.jpg" alt="Дівчина в жакеті" width="200" height="2400">
+
+
+    <h2>Зображення в іншій папці</h2>
+    <p>Зазвичай зображення зберігаються у підпапці. Потім ви повинні включити ім’я папки в атрибут src:</p>
+
+    <img src="../images/html5.gif" alt="HTML5 Icon" style="width:128px;height:128px;">
+
+
+    <h2>Зображення на іншому сервері</h2>
+
+    <img src="https://www.w3schools.com/images/w3schools_green.jpg" alt="W3Schools" style="width:104px;height:142px;">
+
+    <h2>Анімовані зображення</h2>
+
+    <p>HTML дозволяє рухомі зображення:</p>
+
+    <img src="../images/programming.gif" alt="Computer man" style="width:48px;height:48px;">
+
+    <h2>Зображення як посилання</h2>
+
+    <p>Зображення є посиланням. Ви можете натиснути на нього.</p>
+
+    <a href="default.asp">
+        <img src="../images/smiley.gif" alt="HTML Підручник" style="width:42px;height:42px;">
+    </a>
+
+    <h2>Плаваючі зображення</h2>
+    <p><strong>Розташувати зображення праворуч:</strong></p>
+
+    <p><img src="../images/smiley.gif" alt="Smiley face" style="float:right;width:42px;height:42px;">
+        Параграф з плаваючим зображенням. Параграф з плаваючим зображенням. Параграф з плаваючим зображенням.</p>
+
+    <p><strong>Розташувати зображення ліворуч:</strong></p>
+    <p><img src="smiley.gif" alt="Smiley face" style="float:left;width:42px;height:42px;">
+        Параграф з плаваючим зображенням. Параграф з плаваючим зображенням. Параграф з плаваючим зображенням.</p>
+
+    <!-- 1.8.1.	HTML Карти зображень  -->
+    <h2>1.8.1. HTML Карти зображень</h2>
+
+    <h2>Карти зображень</h2>
+    <p>Клікніть на комп'ютер, телефон або чашку кави, щоб перейти на нову сторінку і дізнатися більше про тему:</p>
+
+    <img src="../images/workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+
+    <map name="workmap">
+        <area shape="rect" coords="34,44,270,350" alt="Компьютер" href="../html/computer.html">
+        <area shape="rect" coords="290,172,333,250" alt="Телефон" href="../html/phone.html">
+        <area shape="circle" coords="337,300,44" alt="Чашка кофе" href="../html/coffee.html">
+    </map>
+
+
+
+    <h2>Карти зображення</h2>
+    <p>Натисніть на круасан, щоб перейти на нову сторінку та прочитати більше про тему:</p>
+
+    <img src="../images/frenchfood.jpg" alt="French Food" usemap="#foodmap" width="450" height="675">
+
+    <map name="foodmap">
+        <area shape="poly"
+            coords="140,121,181,116,204,160,204,222,191,270,140,329,85,355,58,352,37,322,40,259,103,161,128,147"
+            alt="Croissant" href="../html/croissant.html">
+    </map>
+
+    <h2>Карти зображень</h2>
+    <p>Клікніть на чашку кави, щоб виконати функцію JavaScript:</p>
+
+    <img src="../images/workplace.jpg" alt="Workplace" usemap="#workmap" width="400" height="379">
+
+    <map name="workmap">
+        <area shape="circle" coords="337,300,44" onclick="myFunction()">
+    </map>
+
+    <script>
+        function myFunction() {
+            alert("Ви тільки що тицнули на чашку кави!");
+        }
+    </script>
+
+    <!-- 1.8.2.	HTML Фонові зображення. -->
+    <h2>1.8.2. HTML Фонові зображення.</h2>
+
+
+    <h2>Фонове зображення</h2>
+
+    <div style="background-image: url('../images/img_girl.jpg');">
+        Ви можете вказати фонові зображення<br>
+        для будь-якого видимого елементу HTML.<br>
+        В цьому прикладі фонове зображення<br>
+        вказане для елемента div.<br>
+        За замовчуванням фонове зображення<br>
+        повториться в напрямку (ах)<br>
+        де воно менше елемента,<br>
+        в якому вказане. (Спробуйте змінити розмір<br>
+        вікна браузера, щоб побачити, як<br>
+        фонове зображення поводить себе.
+    </div>
+
+    <!-- 1.8.3.	HTML елемент <picture>  -->
+    <h2>1.8.3. HTML елемент <picture>
+    </h2>
+
+    <h2>Элемент picture</h2>
+
+    <picture>
+        <source media="(min-width: 650px)" srcset="../images/img_food.jpg">
+        <source media="(min-width: 465px)" srcset="../images/img_car.jpg">
+        <img src="../images/img_girl.jpg" style="width:auto;">
+    </picture>
+
+    <p>Змініть розмір браузера, щоб побачити різні версії завантаження зображень з різними розмірами області перегляду.
+        Браузер шукає перший елемент джерела, де медіа-запит відповідає ширині поточного вікна перегляду користувача, і
+        витягує зображення, вказане в атрибуті srcset.</p>
+
+    <p>Елемент img потрібен в якості останнього дочірнього тега блоку оголошення зображення. Елемент img
+        використовується для забезпечення зворотної сумісності для браузерів, які не підтримують елемент picture або
+        якщо жоден з вихідних тегів не збігається.</p>
+
+    <p><b>Примітка:</strong> Елемент picture не підтримуються в IE12 і більш ранніх версіях або Safari 9.0 і раніших
+            версіях.</p>
+
+    <h2>Елемент picture</h2>
+
+    <picture>
+        <source srcset="../images/img_avatar.png">
+        <source srcset="../images/img_girl.jpg">
+        <img src="../images/img_beatles.gif" alt="Beatles" style="width:auto;">
+    </picture>
+
+    <p>Елемент picture може використовуватися, коли формат зображення підтримується не всіма пристроями.</p>
+    <p>Пристрій буде використовувати перший підтримуваний формат зображення та ігнорувати інші зображення.</p>
+
+    <!-- 1.8.4.HTML Favicon / Фавікон.  -->
+    <h2>1.8.4.HTML Favicon / Фавікон. </h2>
+
+    <!-- 1.9.	HTML Таблиці.  -->
+    <h2>1.9. HTML Таблиці. </h2>
+
+    <h2>HTML Таблиця</h2>
+
+    <table id="custom-table">
+        <tr>
+            <th>Компанія</th>
+            <th>Контакти</th>
+            <th>Країна</th>
+        </tr>
+        <tr>
+            <td>Alfreds Futterkiste</td>
+            <td>Maria Anders</td>
+            <td>Germany</td>
+        </tr>
+        <tr>
+            <td>Centro comercial Moctezuma</td>
+            <td>Francisco Chang</td>
+            <td>Mexico</td>
+        </tr>
+        <tr>
+            <td>Ernst Handel</td>
+            <td>Roland Mendel</td>
+            <td>Austria</td>
+        </tr>
+        <tr>
+            <td>Island Trading</td>
+            <td>Helen Bennett</td>
+            <td>UK</td>
+        </tr>
+        <tr>
+            <td>Laughing Bacchus Winecellars</td>
+            <td>Yoshi Tannamuri</td>
+            <td>Canada</td>
+        </tr>
+        <tr>
+            <td>Magazzini Alimentari Riuniti</td>
+            <td>Giovanni Rovelli</td>
+            <td>Italy</td>
+        </tr>
+    </table>
+
+    <h2>Таблиця з межами</h2>
+    <p>Використовуйте CSS властивість border, щоб додати межу до таблиці.</p>
+
+    <table style="width:100%">
+        <tr>
+            <th>Ім'я</th>
+            <th>Прізвище</th>
+            <th>Вік</th>
+        </tr>
+        <tr>
+            <td>Ілон</td>
+            <td>Маск</td>
+            <td>48</td>
+        </tr>
+        <tr>
+            <td>Володимир</td>
+            <td>Зеленський</td>
+            <td>43</td>
+        </tr>
+        <tr>
+            <td>Саша</td>
+            <td>Грей</td>
+            <td>33</td>
+        </tr>
+    </table>
+
+    <h2>Згортання меж</h2>
+    <p>Якщо ви хочете, щоб межі згортались в одну, додайте CSS властивість border-collapse.</p>
+
+    <table id="unique-table">
+        <tr>
+            <th>Firstname</th>
+            <th>Lastname</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>80</td>
+        </tr>
+    </table>
+
+    <h2>Заголовок таблиці</h2>
+    <p>Щоб додати заголовок до таблиці, використовуйте тег caption.</p>
+
+    <table class="table-with-caption">
+        <caption>Щомісячна економія</caption>
+        <tr>
+            <th>Місяць</th>
+            <th>Економія</th>
+        </tr>
+        <tr>
+            <td>Січень</td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <td>Лютий</td>
+            <td>$50</td>
+        </tr>
+    </table>
+
+    <!-- 1.9.1.	HTML Межі таблиці.  -->
+    <h2>1.9.1. HTML Межі таблиці. </h2>
+    <h2>Таблиця з округленими межами</h2>
+
+    <p>Використовуйте CSS властивість border-radius, щоб додати до меж таблиці закруглені кути.</p>
+
+    <table class="rounded-table">
+        <tr>
+            <th>Ім'я</th>
+            <th>Прізвище</th>
+            <th>Вік</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>80</td>
+        </tr>
+    </table>
+
+    <h2>Таблиця з пунктирними межами</h2>
+
+    <p>Використовуйте CSS властивість border-style, щоб встановити стиль меж таблиці.</p>
+
+    <table class="dotted-table">
+        <tr>
+            <th>Ім'я</th>
+            <th>Прізвище</th>
+            <th>Вік</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>80</td>
+        </tr>
+    </table>
+
+    <!--1.9.2.	HTML Розмір таблиці.   -->
+    <h2>1.9.2. HTML Розмір таблиці. </h2>
+
+    <h2>Таблиця з фіксованою шириною першого стовпця</h2>
+
+    <table class="table-fixed-first-column" style="width:100%">
+        <tr>
+            <th>Ім'я</th>
+            <th>Прізвище</th>
+            <th>Вік</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>80</td>
+        </tr>
+    </table>
+
+    <h2>Таблиця з фіксованою висотою другого рядка</h2>
+
+    <table class="table-fixed-row-height" style="width:100%">
+        <tr>
+            <th>Ім'я</th>
+            <th>Прізвище</th>
+            <th>Вік</th>
+        </tr>
+        <tr class="second-row">
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>80</td>
+        </tr>
+    </table>
+
+    <!--1.9.3.	HTML Заголовки таблиць.   -->
+    <h2>1.9.3. HTML Заголовки таблиць. </h2>
+
+    <h2>Заголовки таблиці</h2>
+    <p>Використовуйте елемент TH для визначення заголовків таблиці.</p>
+
+    <table class="table-bordered-headers" style="width:100%">
+        <tr>
+            <th>Ім'я</th>
+            <th>Прізвище</th>
+            <th>Вік</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+    </table>
+
+    <h2>Заголовки таблиці по вертикалі</h2>
+    <p>Перший стовпець стає заголовком таблиці, якщо ви встановлюєте першу чарунку таблиці в кожному рядку таблиці як
+        елемент TH:</p>
+
+    <table class="vertical-headers-table" style="width:100%">
+        <tr>
+            <th>Ім'я</th>
+            <td>Jill</td>
+            <td>Eve</td>
+        </tr>
+        <tr>
+            <th>Прізвище</th>
+            <td>Smith</td>
+            <td>Jackson</td>
+        </tr>
+        <tr>
+            <th>Вік</th>
+            <td>50</td>
+            <td>94</td>
+        </tr>
+    </table>
+
+    <h2>Заголовок, який охоплює два стовпця</h2>
+    <p>Використовуйте атрибут <code>colspan</code>, щоб заголовок охоплював кілька стовпців.</p>
+
+    <table style="width:100%">
+        <tr>
+            <th colspan="2">Ім'я</th>
+            <th>Вік</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+    </table>
+
+    <h2>Заголовок таблиці</h2>
+    <p>Щоб додати заголовок до таблиці, використовуйте тег caption.</p>
+
+    <table style="width:100%">
+        <caption>Щомісячна економія</caption>
+        <tr>
+            <th>Місяць</th>
+            <th>Економія</th>
+        </tr>
+        <tr>
+            <td>Січень</td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <td>Лютий</td>
+            <td>$50</td>
+        </tr>
+    </table>
+
+    <h2>1.9.5. HTML Таблиці. Colspan & Rowspan. </h2>
+
+    <h2>Cellpadding - Top, Bottom, Left, Right</h2>
+    <p>Ми можемо вказати різні відступи для всіх чотирьох сторін змісту чарунки.</p>
+
+    <table class="custom-padding-table" style="width:100%">
+        <tr>
+            <th>Ім’я</th>
+            <th>Прізвище</th>
+            <th>Вік</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>80</td>
+        </tr>
+    </table>
+
+    <h2>Cellspacing</h2>
+    <p>Змініть відстань між чарунками за допомогою властивості border-spacing.</p>
+
+    <table class="custom-cellspacing-table" style="width:100%">
+        <tr>
+            <th>Ім’я</th>
+            <th>Прізвище</th>
+            <th>Вік</th>
+        </tr>
+        <tr>
+            <td>Jill</td>
+            <td>Smith</td>
+            <td>50</td>
+        </tr>
+        <tr>
+            <td>Eve</td>
+            <td>Jackson</td>
+            <td>94</td>
+        </tr>
+        <tr>
+            <td>John</td>
+            <td>Doe</td>
+            <td>80</td>
+        </tr>
+    </table>
+
+    <h2>1.9.6. HTML Стилізація таблиць. </h2>
+
+    <h2>Таблиця в смугу зебри</h2>
+    <p>Для таблиць зі смугами зебри використовуйте селектор nth-child() і додайте фоновий колір до всіх парних (або
+        непарних) рядків таблиці:</p>
+
+    <table class="zebra-table">
+        <tr>
+            <th>Ім’я</th>
+            <th>Прізвище</th>
+            <th>Зарплата</th>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+            <td>$150</td>
+        </tr>
+        <tr>
+            <td>Joe</td>
+            <td>Swanson</td>
+            <td>$300</td>
+        </tr>
+        <tr>
+            <td>Cleveland</td>
+            <td>Brown</td>
+            <td>$250</td>
+        </tr>
+    </table>
+
+    <h2>Смугаста таблиця</h2>
+    <p>Для таблиць зі смугами зебри використовуйте селектор nth-child() і додайте фоновий колір до всіх парних (або
+        непарних) стовпців таблиці:</p>
+
+    <table class="table-striped">
+        <tr>
+            <th>MON</th>
+            <th>TUE</th>
+            <th>WED</th>
+            <th>THU</th>
+            <th>FRI</th>
+            <th>SAT</th>
+            <th>SUN</th>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+    </table>
+
+    <h2>Смугаста таблиця</h2>
+    <p>Для таблиць зі смугами зебри використовуйте селектор nth-child() і додайте фоновий колір до всіх парних (або
+        непарних) рядків таблиці:</p>
+
+    <table class="striped-table" style="width:100%">
+        <tr>
+            <th>MON</th>
+            <th>TUE</th>
+            <th>WED</th>
+            <th>THU</th>
+            <th>FRI</th>
+            <th>SAT</th>
+            <th>SUN</th>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+        <tr>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+            <td> </td>
+        </tr>
+    </table>
+
+    <h2>Таблиця з ефектом при наведенні</h2>
+    <p>Наведіть вказівник миші на рядки таблиці, щоб побачити ефект.</p>
+
+    <table class="hover-table">
+        <tr>
+            <th>Ім’я</th>
+            <th>Прізвище</th>
+            <th>Зарплата</th>
+        </tr>
+        <tr>
+            <td>Peter</td>
+            <td>Griffin</td>
+            <td>$100</td>
+        </tr>
+        <tr>
+            <td>Lois</td>
+            <td>Griffin</td>
+            <td>$150</td>
+        </tr>
+        <tr>
+            <td>Joe</td>
+            <td>Swanson</td>
+            <td>$300</td>
+        </tr>
+        <tr>
+            <td>Cleveland</td>
+            <td>Brown</td>
+            <td>$250</td>
+        </tr>
+    </table>
+
+    <h2>1.9.7. HTML Група стовпців таблиці. </h2>
+
+    <h2>Colgroup</h2>
+    <p>Додайте групу стовпців (colgroup) з елементом col, який охоплює два стовпці, щоб визначити стиль для двух
+        стовпців:</p>
+
+    <table class="table-colgroup-highlight" style="width: 100%;">
+        <colgroup>
+            <col span="2">
+        </colgroup>
+        <tr>
+            <th>MON</th>
+            <th>TUE</th>
+            <th>WED</th>
+            <th>THU</th>
+            <th>FRI</th>
+            <th>SAT</th>
+            <th>SUN</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+        </tr>
+    </table>
+
+    <h2>Кілька елементів Col</h2>
+    <p>Додати кілька елементів стовпця в групу стовпців:</p>
+
+    <table class="multi-colgroup-table" style="width: 100%;">
+        <colgroup>
+            <col span="2">
+            <col span="3">
+        </colgroup>
+        <tr>
+            <th>MON</th>
+            <th>TUE</th>
+            <th>WED</th>
+            <th>THU</th>
+            <th>FRI</th>
+            <th>SAT</th>
+            <th>SUN</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+        </tr>
+    </table>
+
+    <h2>Пусті групи стовпців</h2>
+    <p>Додайте "пусті" елементи стовпця, які представляють стовпці перед стовпцями, котрі ви хочете стилізувати:</p>
+
+    <table class="empty-colgroup-table" style="width: 100%;">
+        <colgroup>
+            <col span="3">
+            <col span="2">
+        </colgroup>
+        <tr>
+            <th>MON</th>
+            <th>TUE</th>
+            <th>WED</th>
+            <th>THU</th>
+            <th>FRI</th>
+            <th>SAT</th>
+            <th>SUN</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+        </tr>
+    </table>
+
+    <h2>Приховати стовпці</h2>
+    <p>Ви можете приховати визначені стовпці за допомогою властивості visibility:</p>
+
+    <table class="collapsible-columns-table" style="width: 100%;">
+        <colgroup>
+            <col span="2">
+            <col span="3">
+        </colgroup>
+        <tr>
+            <th>MON</th>
+            <th>TUE</th>
+            <th>WED</th>
+            <th>THU</th>
+            <th>FRI</th>
+            <th>SAT</th>
+            <th>SUN</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+        </tr>
+        <tr>
+            <td>8</td>
+            <td>9</td>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+        </tr>
+        <tr>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+        </tr>
+        <tr>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+        </tr>
+    </table>
+
+    <h2>1.10. HTML Списки. </h2>
+
+    <h2>Невпорядкований список HTML</h2>
+
+    <ul>
+        <li>Кава</li>
+        <li>Чай</li>
+        <li>Молоко</li>
+    </ul>
+
+    <h2>Невпорядкований список з дисковими маркерами</h2>
+
+    <ul style="list-style-type:disc;">
+        <li>Кава</li>
+        <li>Чай</li>
+        <li>Молоко</li>
+    </ul>
+
+    <h2>Невпорядкований список з круглими маркерами</h2>
+
+    <ul style="list-style-type:circle;">
+        <li>Кава</li>
+        <li>Чай</li>
+        <li>Молоко</li>
+    </ul>
+
+    <h2>Невпорядкований список з квадратними маркерами</h2>
+
+    <ul style="list-style-type:square;">
+        <li>Кава</li>
+        <li>Чай</li>
+        <li>Молоко</li>
+    </ul>
+
+    <h2>Невпорядкований список без маркерів</h2>
+
+    <ul style="list-style-type:none;">
+        <li>Кава</li>
+        <li>Чай</li>
+        <li>Молоко</li>
+    </ul>
+
+    <h2>Впорядкований список HTML</h2>
+
+    <ol>
+        <li>Кава</li>
+        <li>Чай</li>
+        <li>Молоко</li>
+    </ol>
+
+    <h2>Впорядкований список з цифрами</h2>
+
+    <ol type="1">
+        <li>Кава</li>
+        <li>Чай</li>
+        <li>Молоко</li>
+    </ol>
+
+    <h2>Впорядкований список із заглавними літерами</h2>
+
+    <ol type="A">
+        <li>Уроки HTML</li>
+        <li>Уроки CSS</li>
+        <li>Уроки JavaScript</li>
+    </ol>
+
+    <h2>Впорядкований список з рядковими літерами</h2>
+
+    <ol type="a">
+        <li>Уроки JavaScript</li>
+        <li>Уроки PHP</li>
+        <li>Уроки Python</li>
+    </ol>
+
+    <h2>Впорядкований список з римськими цифрами</h2>
+
+    <ol type="I">
+        <li>Кава</li>
+        <li>Чай</li>
+        <li>Молоко</li>
+    </ol>
+
+    <h2>Впорядкований список з рядковими римськими цифрами</h2>
+
+    <ol type="i">
+        <li>Кава</li>
+        <li>Чай</li>
+        <li>Молоко</li>
+    </ol>
+
+    <h2>Список опису</h2>
+
+    <dl>
+        <dt>Кава</dt>
+        <dd>- чорний горячий напій</dd>
+        <dt>Молоко</dt>
+        <dd>- білий холодний напій</dd>
+    </dl>
+
+    <h2>Вкладений список</h2>
+    <p>Список може бути вкладеним (списки всередині списків):</p>
+
+    <ul>
+        <li>Кава</li>
+        <li>Чай
+            <ul>
+                <li>Чорний чай</li>
+                <li>Зелений чай</li>
+            </ul>
+        </li>
+        <li>Молоко</li>
+    </ul>
+
+    <h2>Атрибут start</h2>
+    <p>За замовчуванням впорядкований список починає відлік із 1. Використовуйте атрибут <b>start</b>, щоб почати відлік
+        із вказаного числа:</p>
+
+    <ol start="50">
+        <li>Кава</li>
+        <li>Чай</li>
+        <li>Молоко</li>
+    </ol>
+
+    <ol type="I" start="50">
+        <li>Кава</li>
+        <li>Чай</li>
+        <li>Молоко</li>
+    </ol>
+
+    <h2>Навігаційне меню</h2>
+    <p>В цьому прикладі ми використовуємо CSS для стилізації списку по горизонталі, щоб створити меню навігації:</p>
+
+    <ul class="horizontal-nav-menu">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#news">News</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about">About</a></li>
+    </ul>
+
+    <h2>2.1. HTML Форми. </h2>
+
+    <h2>HTML форми</h2>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Ім'я:<br>
+        <input type="text" name="firstname" value="Mickey">
+        <br>
+        Прізвище:<br>
+        <input type="text" name="lastname" value="Mouse">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Введення тексту</h2>
+
+    <form>
+        <label for="fname">Ім'я:</label><br>
+        <input type="text" id="fname" name="fname" value="John"><br>
+        <label for="lname">Прізвище:</label><br>
+        <input type="text" id="lname" name="lname" value="Doe">
+    </form>
+
+    <p>Зверніть увагу, що сама форма не відображається.</p>
+
+    <p>Також зверніть увагу, що за замовчуванням ширина поля введення тексту складає 20 символів.</p>
+
+
+    <h2>Радіо кнопки</h2>
+
+    <form>
+        <input type="radio" name="gender" value="male" checked> Чоловік<br>
+        <input type="radio" name="gender" value="female"> Жінка<br>
+        <input type="radio" name="gender" value="other"> Інше
+    </form>
+
+    <h2>HTML форми</h2>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Ім'я:<br>
+        <input type="text" name="firstname" value="Mickey">
+        <br>
+        Прізвище:<br>
+        <input type="text" name="lastname" value="Mouse">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>Якщо ви натисните кнопку "Надіслати", дані форми будуть надіслані на сторінку "/action_page.php".</p>
+
+    <h2>Атрибут target</h2>
+    <p>При відправці цієї форми результат буде відкрито в новій вкладці браузера:</p>
+
+    <form action="https://www.w3schools.com/action_page.php" target="_blank">
+        Ім'я:<br>
+        <input type="text" name="firstname" value="Mickey">
+        <br>
+        Прізвище:<br>
+        <input type="text" name="lastname" value="Mouse">
+        <br><br>
+        <input type="submit" value="Надіслати">
+    </form>
+
+    <h2>Атрибут method</h2>
+    <p>Ця форма буде надіслана з використанням метода GET:</p>
+
+    <form action="https://www.w3schools.com/action_page.php" target="_blank" method="GET">
+        Ім'я:<br>
+        <input type="text" name="firstname" value="Василь">
+        <br>
+        Прізвище:<br>
+        <input type="text" name="lastname" value="Голобородько">
+        <br><br>
+        <input type="submit" value="Надіслати">
+    </form>
+
+    <p>Після відправки зверніть увагу, що значення форми відображаються в адресному рядку нової вкладки браузера.</p>
+
+
+    <h2>Атрибут method</h2>
+    <p>Ця форма буде надіслана методом POST:</p>
+
+    <form action="https://www.w3schools.com/action_page.php" target="_blank" method="POST">
+        Ім'я:<br>
+        <input type="text" name="firstname" value="Mickey">
+        <br>
+        Прізвище:<br>
+        <input type="text" name="lastname" value="Mouse">
+        <br><br>
+        <input type="submit" value="Надіслати">
+    </form>
+
+    <p>Після відправки зверніть увагу, що, на відміну від метода GET, значення форми НЕ відображаються в адресному рядку
+        нової вкладки браузера.</p>
+
+    <h2>Атрибут name</h2>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Ім'я:<br>
+        <input type="text" value="Mickey">
+        <br>
+        Прізвище:<br>
+        <input type="text" name="lastname" value="Mouse">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>Якщо ви натиснете кнопку "Відправити", дані форми будуть відправлені на сторінку "/action_page.php".</p>
+
+    <p>Зверніть увагу, що значення поля "Ім'я" не відправлено, так як елемент input не має атрибута name.</p>
+
+    <h2>Групування даних форми за допомогою Fieldset</h2>
+    <p>Елемент fieldset використовується для групування пов'язаних даних у формі, а елемент legend визначає заголовок
+        для елемента fieldset.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        <fieldset>
+            <legend>Персональна інформація:</legend>
+            Ім'я:<br>
+            <input type="text" name="firstname" value="Mickey">
+            <br>
+            Прізвище:<br>
+            <input type="text" name="lastname" value="Mouse">
+            <br><br>
+            <input type="submit" value="Відправити">
+        </fieldset>
+    </form>
+
+    <h2>2.1.1. HTML Атрибути форми</h2>
+
+    <p>Заповніть і відправте форму, потім перевантажте сторінку, почніть заповнювати форму знову - і подивіться, як
+        працює автозаповнення.</p>
+
+    <p>Потім спробуйте встановити для автозаповнення значення "off".</p>
+
+    <form action="/action_page.php" autocomplete="on">
+        <label for="fname">Ім'я:</label>
+        <input type="text" id="fname" name="fname"><br><br>
+        <label for="email">Email:</label>
+        <input type="text" id="email" name="email"><br><br>
+        <input type="submit">
+    </form>
+
+    <h2>Атрибут форми novalidate</h2>
+
+    <p>Атрибут novalidate вказує, що введення форми не повинно перевірятися при відправці:</p>
+
+    <form action="/action_page.php" novalidate>
+        <label for="email">Введіть ваш email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b> Атрибут novalidate тега form не підтримується в Safari 10 (або більш ранній версії).</p>
+
+    <h2>2.1.2. HTML Елементи форми</h2>
+
+    <h2>Елемент input</h2>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Введіть ваше ім'я:
+        <input name="firstname" type="text">
+        <br><br>
+        <input type="submit">
+    </form>
+
+    <h2>Елемент select</h2>
+    <p>Елемент select визначає список, що розкривається:</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        <select name="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+        <br><br>
+        <input type="submit">
+    </form>
+
+    <h2>Попередньо вибраний варіант</h2>
+    <p>Ви можете попередньо вибрати опцію з обраним атрибутом.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        <select name="cars">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat" selected>Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+        <br><br>
+        <input type="submit">
+    </form>
+
+    <h2>Видимі значення параметрів</h2>
+    <p>Використовуйте атрибут size, щоб вказати кількість видимих значень.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        <select name="cars" size="3">
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+        <br><br>
+        <input type="submit">
+    </form>
+
+    <h2>Дозволити множинний вибір</h2>
+    <p>Використовуйте multiple атрибут, щоб користувач міг вибрати більше одного значення.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        <select name="cars" size="4" multiple>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="fiat">Fiat</option>
+            <option value="audi">Audi</option>
+        </select>
+        <br><br>
+        <input type="submit">
+    </form>
+
+    <p>Натисніть кнопку "Ctrl" (Windows) / "Command" (Mac), щоб вибрати кілька параметрів.</p>
+
+
+    <h2>Елемент Textarea</h2>
+    <p>Елемент textarea визначає багаторядкове поле введення.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        <textarea name="message" rows="10" cols="30">Кіт лизав яйця, лежачі в кущах.</textarea>
+        <br>
+        <input type="submit">
+    </form>
+
+    <h2>Стилізація текстової області</h2>
+    <p>Використовуйте CSS, щоб змінити розмір текстової області:</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        <textarea name="message" style="width:200px; height:600px;">Кіт лежав в саду та жер мої яблука.</textarea>
+        <br>
+        <input type="submit">
+    </form>
+
+    <h2>Елемент button</h2>
+
+    <button type="button" onclick="alert('Слава Україні!')">Тицни мене!</button>
+
+    <h2>Елемент datalist</h2>
+    <p>Елемент datalist визначає список зумовлених опцій для елемента input.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b> Тег datalist не підтримується в Safari або IE9 (і раніших версіях).</p>
+
+    <form action="/action_page.html" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+        0
+        <input type="range" id="a" name="a" value="50">
+        100 +
+        <input type="number" id="b" name="b" value="50">
+        =
+        <output name="x" for="a b"></output>
+        <br><br>
+        <input type="submit">
+    </form>
+
+    <h2>2.1.3. HTML Типи вводу</h2>
+
+    <h2>Текстове поле</h2>
+    <p><strong>input type="text"</strong> визначає однорядкове поле введення тексту:</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Ім'я:<br>
+        <input type="text" name="firstname">
+        <br>
+        Прізвище:<br>
+        <input type="text" name="lastname">
+        <br><br>
+        <input type="submit">
+    </form>
+
+    <p>Зверніть увагу, що саму форму не видно.</p>
+    <p>Зверніть увагу, що ширина текстового поля за замовчуванням становить 20 символів.</p>
+
+    <h2>Поле пароля</h2>
+    <p><strong>input type="password"</strong> визначає поле пароля:</p>
+
+    <form action="#">
+        Ім'я користувача:<br>
+        <input type="text" name="userid">
+        <br>
+        Пароль користувача:<br>
+        <input type="password" name="psw">
+    </form>
+
+    <p>Символи в полі пароля маскуються (відображаються у вигляді зірочок або кіл).</p>
+
+    <h2>Кнопка Відправити (Надіслати)</h2>
+    <p><strong>input type="submit"</strong> визначає кнопку для відправлення даних форми в обробник форми:</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Ім'я:<br>
+        <input type="text" name="firstname" value="Mickey">
+        <br>
+        Прізвище:<br>
+        <input type="text" name="lastname" value="Mouse">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>Якщо ви кликните "Відправити", данні форми будуть відправлені на сторінку "/action_page.php".</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Ім'я:<br>
+        <input type="text" name="firstname" value="Mickey">
+        <br>
+        Прізвище:<br>
+        <input type="text" name="lastname" value="Mouse">
+        <br><br>
+        <input type="submit">
+    </form>
+
+    <h2>Кнопка Reset</h2>
+    <p><strong>input type="reset"</strong> визначає кнопку скидання, яка скидає всі значення форми до значень за
+        замовчуванням:</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Ім'я:<br>
+        <input type="text" name="firstname" value="Mickey">
+        <br>
+        Прізвище:<br>
+        <input type="text" name="lastname" value="Mouse">
+        <br><br>
+        <input type="submit" value="Submit">
+        <input type="reset">
+    </form>
+
+    <p>Якщо ви зміните вхідні значення і натиснете кнопку "Скинути", дані форми будуть скинуті до значень за
+        замовчуванням.</p>
+
+    <h2>Радіо кнопки</h2>
+    <p><strong>input type="radio"</strong> визначає радіо кнопку:</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        <input type="radio" name="gender" value="male" checked> Чоловік<br>
+        <input type="radio" name="gender" value="female"> Жінка<br>
+        <input type="radio" name="gender" value="other"> Щось таке<br><br>
+        <input type="submit">
+    </form>
+
+
+    <h2>Прапорці</h2>
+    <p>Значення <strong>input type="checkbox"</strong> визначає прапорці (чекбокси):</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        <input type="checkbox" name="vehicle1" value="Bike">у мене є велосипед
+        <br>
+        <input type="checkbox" name="vehicle2" value="Car">у мене є автомобіль
+        <br><br>
+        <input type="submit">
+    </form>
+
+    <h2>Кнопка вводу</h2>
+
+    <input type="button" onclick="alert('Слава Україні!')" value="Тицни мене!">
+
+    <h2>Палітра кольорів</h2>
+    <p><strong>input type="color"</strong> використовується для поля введення, які повинні містити колір.</p>
+    <p>Залежно від підтримки браузера: <br>Під час введення поля input може з'явитися палітра кольорів.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Оберіть свій улюблений колір:
+        <input type="color" name="favcolor" value="#ff0000">
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b> type="color" не підтримується в Internet Explorer 11 і попередніх версіях або Safari 9.1 і більш
+        ранніх версіях.</p>
+
+    <h2>Поле дати</h2>
+    <p><strong>input type="date"</strong> використовується для поля введення, які повинні містити дату.</p>
+    <p>Залежно від підтримки браузера:<br> При введенні поля введення може з'явитися вікно вибору дати.
+    <p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        День народження:
+        <input type="date" name="bday">
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b> type="date" не підтримується в Safari та Internet Explorer 11 і ранніх версіях.</p>
+
+    <h2>Обмеження поля дати</h2>
+    <p>Використовуйте атрибути min та max для додавання обмежень на дати:</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Введіть дату до 1980-01-01:<br>
+        <input type="date" name="bday" max="1979-12-31"><br><br>
+        Введіть дату після 2000-01-01:<br>
+        <input type="date" name="bday" min="2000-01-02"><br><br>
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b> type="date" не підтримується в Safari та Internet Explorer 11 і більш ранніх версіях.</p>
+
+    <h2>Поле локальної дати</h2>
+    <p><strong>input type="datetime-local"</strong> вказує поле введення дати і часу без часового пояса.</p>
+    <p>В залежності від підтримки браузера:<br>При виборі поля введення може виринути вікно вибору дати.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        День народження (дата і час):
+        <input type="datetime-local" name="bdaytime">
+        <input type="submit" value="Send">
+    </form>
+
+    <p><b>Примітка:</b> type="datetime-local" не підтримується в Firefox, Safari або Internet Explorer 12 і більш ранніх
+        версіях.</p>
+
+    <h2>Поле Email</h2>
+    <p><strong>input type="email"</strong> використовується для полів введення, які мають містити адресу електронної
+        пошти:</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        E-mail:
+        <input type="email" name="email">
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b>type="email" не підтримується в IE9 і більш ранніх версіях.</p>
+
+
+    <h1>Завантаження файла</h1>
+
+    <p>Відобразити поле вибору файла, яке дозволяє вибрати файл для завантаження:</p>
+    <form action="https://www.w3schools.com/action_page.php">
+        Вибрати файл: <input type="file" name="myFile"><br><br>
+        <input type="submit">
+    </form>
+
+    <h2>Поле місяця</h2>
+    <p><strong>input type="month"</strong> дозволяє користувачу вибрати місяць і рік.</p>
+    <p>В залежності від підтримки браузера: <br>При введенні поля input може з'явитися вікно вибору дати.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        День народження (місяць і рік):
+        <input type="month" name="bdaymonth">
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b> type="month" не підтримується в Firefox, Safari та Internet Explorer 11 і більш ранніх версіях.
+    </p>
+
+
+    <h2>Поле Number</h2>
+    <p><strong>input type="number"</strong> визначає числове поле введення.</p>
+    <p>Ви можете використовувати атрибути min та max для додавання числових обмежень в поле введення:</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Кількість (від 1 до 5):
+        <input type="number" name="quantity" min="1" max="5">
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b> type="number" не підтримується в IE9 і більш ранніх версіях.</p>
+
+    <h2>Числові кроки</h2>
+    <p>В залежності від підтримки браузера: <br>Фіксовані кроки будуть застосовуватись в полі введення.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Кількість:
+        <input type="number" name="quantity" min="0" max="100" step="10" value="30">
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b>type="number" не підтримується в IE9 і більш ранніх версіях.</p>
+
+
+    <h2>Поле Range</h2>
+    <p>В залежності від підтримки браузера: <br>Тип введення "range" може відображатися у вигляді повзунка.
+    <p>
+
+    <form action="https://www.w3schools.com/action_page.php" method="get">
+        Бали:
+        <input type="range" name="points" min="0" max="10">
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b> type="range" не підтримується в Internet Explorer 9 і більш ранніх версіях.</p>
+
+    <h2>Поле пошуку</h2>
+    <p><strong>input type="search"</strong> використовується для полів пошуку (веде себе як звичайне текстове поле):</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Пошук Google:
+        <input type="search" name="googlesearch">
+        <input type="submit">
+    </form>
+
+    <h2>Поле для телефона</h2>
+    <p><strong>input type="tel"</strong> використовується для полів введення, які мають містити номер телефона:</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Телефон: <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" required>
+        <input type="submit">
+        <span>Формат: 123-45-678</span>
+    </form>
+
+    <h2>Поле Time</h2>
+    <p><strong>input type="time"</strong> дозволяє користувачу вибрати час (без часового поясу):</p>
+
+    <p>В залежності від підтримки браузера:<br> При введенні поля input може з'явитися вікно вибору часу.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Виберіть час:
+        <input type="time" name="usr_time">
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b> type="time" не підтримується в Safari та Internet Explorer 12 і більш ранніх версіях.</p>
+
+
+    <h2>URL поле</h2>
+    <p>Використовуйте <strong>input type="url"</strong> для полів input, які містять URL адресу:</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Додайте свою домашню сторінку:
+        <input type="url" name="homepage">
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b> Елемент type="url" не підтримується в IE9 і більш ранніх версіях.</p>
+
+    <h2>Поле Week</h2>
+    <p><strong>input type="week"</strong> дозволяє користувачу вибрати тиждень і рік:</p>
+    <p>В залежності від підтримки браузера: <br>При виборі поля введення може з'явитися вікно вибору дати.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Виберіть тиждень:
+        <input type="week" name="year_week">
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b> type="week" не підтримується в Firefox, Safari та Internet Explorer 11 і більш ранніх версіях.
+    </p>
+
+    <h2>2.1.4. HTML Атрибути вводу</h2>
+
+    <h2>Атрибут value</h2>
+    <p>Атрибут value вказує початкове значення для поля input:</p>
+
+    <form action="#">
+        Ім'я:<br>
+        <input type="text" name="firstname" value="John">
+        <br>
+        Прізвище:<br>
+        <input type="text" name="lastname">
+    </form>
+
+    <h2>Атрибут readonly</h2>
+    <p>Атрибут readonly вказує, що поле введення доступне лише для читання (не може бути змінено):</p>
+
+    <form action="#">
+        Ім'я:<br>
+        <input type="text" name="firstname" value="John" readonly>
+        <br>
+        Прізвище:<br>
+        <input type="text" name="lastname">
+    </form>
+
+    <h2>Атрибут disabled</h2>
+    <p>Атрибут disabled вказує, що поле input відключено:</p>
+
+    <form action="#">
+        Ім'я:<br>
+        <input type="text" name="firstname" value="John" disabled>
+        <br>
+        Прізвище:<br>
+        <input type="text" name="lastname">
+    </form>
+
+    <h2>Атрибут size</h2>
+    <p>Атрибут size вказує розмір (в символах) поля введення:</p>
+
+    <form action="#">
+        Ім'я:<br>
+        <input type="text" name="firstname" value="John" size="40">
+        <br>
+        Прізвище:<br>
+        <input type="text" name="lastname">
+    </form>
+
+    <h2>Атрибут maxlength</h2>
+    <p>Атрибут maxlength вказує максимально допустиму довжину для поля введення:</p>
+
+    <form action="#">
+        Ім'я:<br>
+        <input type="text" name="firstname" maxlength="10">
+        <br>
+        Прізвище:<br>
+        <input type="text" name="lastname">
+    </form>
+
+    <h2>Атрибут autocomplete</h2>
+
+    <form action="https://www.w3schools.com/action_page.php" autocomplete="on">
+        Ім'я:<input type="text" name="fname"><br>
+        Прізвище: <input type="text" name="lname"><br>
+        E-mail: <input type="email" name="email" autocomplete="off"><br>
+        <input type="submit">
+    </form>
+
+    <p>Заповніть і відправте форму, потім перезавантажте сторінку, щоб побачити, як працює автозаповнення.</p>
+    <p>Зверніть увагу, що автозаповнення включено для форми, але виключено для поля електронної пошти.</p>
+
+    <h2>Атрибут novalidate</h2>
+    <p>Атрибут novalidate вказує, що данні форми не мають перевірятися при відправці.</p>
+
+    <form action="https://www.w3schools.com/action_page.php" novalidate>
+        E-mail: <input type="email" name="user_email">
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b> Атрибут novalidate тега form не підтримується в Internet Explorer 9 і більш ранніх версіях та в
+        Safari 10 і більш ранніх версіях.</p>
+
+    <h2>Атрибут autofocus</h2>
+    <p>Атрибут autofocus вказує, що поле введення має автоматично фокусуватися при завантаженні сторінки.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Ім'я:<input type="text" name="fname" autofocus><br>
+        Прізвище: <input type="text" name="lname"><br>
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b> Атрибут autofocus тега input не підтримується в Internet Explorer 9 і більш ранніх версіях.</p>
+
+
+    <h2>Атрибут form</h2>
+    <p>Атрибут form вказує одну або кілька форм, до яких належить елемент введення.</p>
+
+    <form action="https://www.w3schools.com/action_page.php" id="form1">
+        Ім'я: <input type="text" name="fname"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>Поле "Прізвище" нижче знаходиться поза елементом form, але все ще залишається частиною форми.</p>
+    Прізвище: <input type="text" name="lname" form="form1">
+
+    <h2>Атрибут formaction</h2>
+    <p>Атрибут formaction вказує URL-адресу файла, який буде обробляти елемент управління введенням при відправці форми.
+    </p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Ім'я: <input type="text" name="fname"><br>
+        Прізвище: <input type="text" name="lname"><br>
+        <input type="submit" value="Відправити"><br>
+        <input type="submit" formaction="/action_page2.php" value="Відправити на іншу сторінку">
+    </form>
+
+    <p><b>Примітка:</b> Атрибут formaction тега input не підтримується в Internet Explorer 9 і більш ранніх версіях.</p>
+
+    <h2>Атрибут formenctype</h2>
+    <p>Атрибут formenctype вказує, як данні форми мають бути закодовані при відправці (тільки для форм з method="post").
+    </p>
+
+    <form action="https://www.w3schools.com/action_page_binary.asp" method="post">
+        Ім'я: <input type="text" name="fname"><br>
+        <input type="submit" value="Submit">
+        <input type="submit" formenctype="multipart/form-data" value="Submit as Multipart/form-data">
+    </form>
+
+    <p><b>Примітка:</b> Атрибут formenctype тега input не підтримується в Internet Explorer 9 і більш ранніх версіях.
+    </p>
+
+    <h2>Атрибут formmethod</h2>
+    <p>Атрибут formmethod визначає метод HTTP для відправки даних форми на URL дії.</p>
+
+    <form action="https://www.w3schools.com/action_page.php" method="get">
+        Ім'я: <input type="text" name="fname"><br>
+        Прізвище: <input type="text" name="lname"><br>
+        <input type="submit" value="Відправити">
+        <input type="submit" formmethod="post" value="Відправити за допомогою POST">
+    </form>
+
+    <p><b>Примітка:</b> Атрибут formmethod тега input не підтримується в Internet Explorer 9 і більш ранніх версіях.</p>
+
+
+    <h2>Атрибут formnovalidate</h2>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        E-mail: <input type="email" name="userid"><br>
+        <input type="submit" value="Submit"><br>
+        <input type="submit" formnovalidate value="Submit without validation">
+    </form>
+
+    <p><b>Примітка:</b> Атрибут formnovalidate вхідного тега не підтримується в Internet Explorer 9 і більш ранніх
+        версіях або в Safari 10 і більш ранніх версіях.</p>
+
+    <h2>Атрибут formtarget</h2>
+    <p>Атрибут formtarget вказує ім'я або ключове слово, яке вказує, де відображати відповідь, отриману після відправки
+        форми.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Ім'я: <input type="text" name="fname"><br>
+        Прізвище: <input type="text" name="lname"><br>
+        <input type="submit" value="Відправити як зазвичай">
+        <input type="submit" formtarget="_blank" value="Відправити в новому вікні/вкладці">
+    </form>
+
+    <p><b>Примітка:</b> Атрибут formtarget тега input не підтримується в Internet Explorer 9 і більш ранніх версіях.</p>
+
+    <h2>Атрибути height та width</h2>
+    <p>Атрибути height та width визначають висоту і ширину елемента input type="image".</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Ім'я: <input type="text" name="fname"><br><br>
+        Прізвище: <input type="text" name="lname"><br>
+        <input type="image" src="../images/img_submit.gif" alt="Відправити" title="Відправити" width="48" height="48">
+    </form>
+
+    <p><b>Примітка:</b> input type="image" Відправляє координати X та Y кліка, що активував кнопку зображення.</p>
+
+    <h2>Атрибут list</h2>
+    <p>Атрибут list посилається на елемент списку даних, що містить попередньо визначені параметри для елемента input.
+    </p>
+
+    <form action="https://www.w3schools.com/action_page.php" method="get">
+
+        <input list="browsers" name="browser">
+        <datalist id="browsers">
+            <option value="Internet Explorer">
+            <option value="Firefox">
+            <option value="Chrome">
+            <option value="Opera">
+            <option value="Safari">
+        </datalist>
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b> Тег datalist не підтримується в Internet Explorer 9 і більш ранніх версіях або в Safari.</p>
+
+
+    <h2>Атрибути min та max</h2>
+    <p>Атрибути min та max визначають мінімальне та максимальне значення для елемента введення.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Введіть дату до 1980-01-01:
+        <input type="date" name="bday" max="1979-12-31"><br>
+
+        Введіть дату після 2000-01-01:
+        <input type="date" name="bday" min="2000-01-02"><br>
+
+        Кількість (від 1 до 5):
+        <input type="number" name="quantity" min="1" max="5"><br>
+
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b> Атрибути max та min тега input не підтримуються в Internet Explorer 9 і більш ранніх версіях.
+    </p>
+    <p><b>Примітка:</b> Атрибути max та min не будуть працювати для дати і часу в Internet Explorer 10, оскільки IE 10
+        не підтримує ці типи введення.</p>
+
+    <h2>Кілька атрибутів</h2>
+    <p>Атрибут multiple вказує, що користувачу дозволено вводити більше одного значення в елементі input.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Оберіть зображення: <input type="file" name="img" multiple>
+        <input type="submit">
+    </form>
+
+    <p>Спробуйте обрати більше одного файла при перегляді файлів.</p>
+
+    <p><b>Примітка:</b> Атрибут multiple тега input не підтримується в Internet Explorer 9 і більш ранніх версіях.</p>
+
+
+    <h2>Атрибут pattern</h2>
+    <p>Атрибут pattern визначає регулярний вираз, з яким перевіряється значення елемента input.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Код країни: <input type="text" name="country_code" pattern="[A-Za-z]{3}" title="Трилітерний код країни">
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b> Атрибут pattern тега input не підтримується в Internet Explorer 9 і більш ранніх версіях або в
+        Safari 10 і більш ранніх версіях.</p>
+
+    <h2>Атрибут placeholder</h2>
+    <p>Атрибут placeholder вказує підказку, яка описує очікуване значення поля введення (приблизне значення або короткий
+        опис формату).</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        <input type="text" name="fname" placeholder="Ім’я"><br>
+        <input type="text" name="lname" placeholder="Прізвище"><br>
+        <input type="submit" value="Відправити">
+    </form>
+
+    <p><b>Примітка:</b> Атрибут placeholder тега input не підтримується в Internet Explorer 9 і більш ранніх версіях.
+    </p>
+
+    <h2>Атрибут required</h2>
+    <p>Атрибут required вказує, що поле введення має бути заповнено перед відправкою форми.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Ім'я користувача: <input type="text" name="usrname" required>
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b> Атрибут required тега input не підтримується в Internet Explorer 9 і більш ранніх версіях або в
+        Safari версії 10.1.</p>
+
+
+    <h2>Атрибут step</h2>
+    <p>Атрибут step визначає допустимі інтервали чисел для елемента input.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        <input type="number" name="points" step="3">
+        <input type="submit">
+    </form>
+
+    <p><b>Примітка:</b> Атрибут step вхідного тега не підтримується в Internet Explorer 9 і більш ранніх версіях.</p>
+
+    <h2>2.1.5. HTML Атрибути Input форми</h2>
+
+    <h2>Атрибут form</h2>
+    <p>Атрибут form вказує одну або кілька форм, до яких належить елемент введення.</p>
+
+    <form action="https://www.w3schools.com/action_page.php" id="form1">
+        Ім'я: <input type="text" name="fname"><br>
+        <input type="submit" value="Submit">
+    </form>
+
+    <p>Поле "Прізвище" нижче знаходиться поза елементом form, але все ще залишається частиною форми.</p>
+    Прізвище: <input type="text" name="lname" form="form1">
+
+    <h2>Атрибут formaction</h2>
+    <p>Атрибут formaction вказує URL-адресу файла, який буде обробляти елемент управління введенням при відправці форми.
+    </p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Ім'я: <input type="text" name="fname"><br>
+        Прізвище: <input type="text" name="lname"><br>
+        <input type="submit" value="Відправити"><br>
+        <input type="submit" formaction="/action_page2.php" value="Відправити на іншу сторінку">
+    </form>
+
+    <p><b>Примітка:</b> Атрибут formaction тега input не підтримується в Internet Explorer 9 і більш ранніх версіях.</p>
+
+
+    <h2>Атрибут formenctype</h2>
+    <p>Атрибут formenctype вказує, як данні форми мають бути закодовані при відправці (тільки для форм з method="post").
+    </p>
+
+    <form action="https://www.w3schools.com/action_page_binary.asp" method="post">
+        Ім'я: <input type="text" name="fname"><br>
+        <input type="submit" value="Submit">
+        <input type="submit" formenctype="multipart/form-data" value="Submit as Multipart/form-data">
+    </form>
+
+    <p><b>Примітка:</b> Атрибут formenctype тега input не підтримується в Internet Explorer 9 і більш ранніх версіях.
+    </p>
+
+    <h2>Атрибут formmethod</h2>
+    <p>Атрибут formmethod визначає метод HTTP для відправки даних форми на URL дії.</p>
+
+    <form action="https://www.w3schools.com/action_page.php" method="get">
+        Ім'я: <input type="text" name="fname"><br>
+        Прізвище: <input type="text" name="lname"><br>
+        <input type="submit" value="Відправити">
+        <input type="submit" formmethod="post" value="Відправити за допомогою POST">
+    </form>
+
+    <p><b>Примітка:</b> Атрибут formmethod тега input не підтримується в Internet Explorer 9 і більш ранніх версіях.</p>
+
+    <h2>Атрибут formtarget</h2>
+    <p>Атрибут formtarget вказує ім'я або ключове слово, яке вказує, де відображати відповідь, отриману після відправки
+        форми.</p>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        Ім'я: <input type="text" name="fname"><br>
+        Прізвище: <input type="text" name="lname"><br>
+        <input type="submit" value="Відправити як зазвичай">
+        <input type="submit" formtarget="_blank" value="Відправити в новому вікні/вкладці">
+    </form>
+
+    <p><b>Примітка:</b> Атрибут formtarget тега input не підтримується в Internet Explorer 9 і більш ранніх версіях.</p>
+
+
+    <h2>Атрибут formnovalidate</h2>
+
+    <form action="https://www.w3schools.com/action_page.php">
+        E-mail: <input type="email" name="userid"><br>
+        <input type="submit" value="Submit"><br>
+        <input type="submit" formnovalidate value="Submit without validation">
+    </form>
+
+    <p><b>Примітка:</b> Атрибут formnovalidate вхідного тега не підтримується в Internet Explorer 9 і більш ранніх
+        версіях або в Safari 10 і більш ранніх версіях.</p>
+
+</body>
+
+</html>
